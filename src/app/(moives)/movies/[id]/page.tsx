@@ -1,14 +1,24 @@
-import { API_URL } from '@/app/(home)/page'
 import MovieInfo, { getMovie } from '@/components/movie-info'
 import MovieVideos from '@/components/movie-videos'
 import { Suspense } from 'react'
 
-interface IParams {
-    params: { id: string }
-}
+// IParams 타입 정의: Next.js의 `params`가 비동기적일 수 있으므로 Promise 타입으로 정의
+type IParams = Promise<{
+    id: string // id는 문자열로 전달됨
+}>
 
-export async function generateMetadata({ params: { id } }: IParams) {
+// generateMetadata 함수: 메타데이터 생성
+export async function generateMetadata(props: { params: IParams }) {
+    // `props.params`는 Promise 타입이므로 await로 비동기 처리
+    const params = await props.params
+
+    // `params`에서 id를 추출
+    const id = params.id
+
+    // `getMovie` 함수로 id에 해당하는 영화 데이터를 가져옴
     const movie = await getMovie(id)
+
+    // 영화 제목을 메타데이터로 반환
     return {
         title: movie.title,
     }
@@ -33,8 +43,13 @@ export async function generateMetadata({ params: { id } }: IParams) {
 //     return response.json()
 // }
 
-export default async function MovieDetail({ params: { id } }: IParams) {
-    //const { id } = await params // params를 비동기로 처리
+export default async function MovieDetail(props: { params: IParams }) {
+    // `props.params`는 Promise 타입이므로 await로 비동기 처리
+    const params = await props.params
+
+    // `params`에서 id를 추출
+    const id = params.id
+
     // const movie = await getMovie(id)
     // const videos = await getVideos(id)
     // const [movies, videos] = await Promise.all([getMovie(id), getVideos(id)])

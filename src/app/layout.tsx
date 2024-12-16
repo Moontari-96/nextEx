@@ -1,8 +1,5 @@
 import '../../styles/globals.css'
 import Navigation from '../components/navigation'
-import SalesLayout from './about-us/company/jobs/sales/layout'
-import Sales from './about-us/company/jobs/sales/page'
-import AboutUsLayout from './about-us/layout'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
