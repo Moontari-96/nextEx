@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎥 Next.js Movies
+Live Demo: nextjs-movies-ten-chi.vercel.app
 
-## Getting Started
+📚 About the Project
+Next.js Movies는 영화 데이터를 기반으로 페이지를 전환하고, 각 영화에 대한 정보를 제공하는 간단한 토이 프로젝트입니다.
+Next.js의 강력한 기능인 Dynamic Routing, Loading Page, Not Found Page 등을 활용하여 제작되었습니다.
 
-First, run the development server:
+✨ Features
+Dynamic Routing: 영화 정보를 동적으로 로드하고 상세 페이지로 전환.
+Custom Components:
+Navigator: 페이지 전환을 위한 네비게이터 컴포넌트.
+Movie: 개별 영화 카드를 렌더링하는 컴포넌트.
+CSS Modules: 각 컴포넌트에 스타일을 모듈화하여 적용.
+Loading Page: 데이터 로딩 중 로딩 화면 제공.
+Not Found Page: 존재하지 않는 페이지로 접근 시 404 페이지 제공.
+TypeScript: 타입 안정성을 보장하며 개발.
+🛠️ Tech Stack
+Framework: Next.js
+Languages: TypeScript, JavaScript
+CSS: CSS Modules
+Deployment: Vercel
+Tooling:
+ESLint: 코드 품질 보장.
+Prettier: 코드 스타일 유지.
 
-```bash
+🚀 Getting Started
+1. Clone the Repository
+bash
+코드 복사
+git clone https://github.com/your-username/nextjs-movies.git
+cd nextjs-movies
+2. Install Dependencies
+bash
+코드 복사
+npm install
+# or
+yarn install
+3. Run Development Server
+bash
+코드 복사
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 to view it in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📂 Project Structure
+plaintext
+코드 복사
+src/
+├── app/
+│   ├── (home)/                # Home page directory
+│   │   ├── page.tsx           # Home page component  
+│   │
+│   ├── movies/
+│   │   ├── [id]/              # Dynamic movie detail routing
+│   │   │   ├── page.tsx       # Movie detail page
+│   │
+│   ├── not-found.tsx          # Custom 404 page
+│
+├── components/
+│   ├── movie.tsx              # Movie card component
+│   ├── navigator.tsx          # Navigation component
+│   ├── movie-info.tsx         # Movie info details component
+│   ├── movie-videos.tsx       # Movie videos details component
+│   ├── loading.tsx            # Loading page for suspense
+│
+├── styles/                    # Shared styles
+│   ├── globals.css            # Global CSS
+│   ├── home.module.css        # Home CSS
+│   ├── movie-info.module.css  # Movie info CSS
+│   ├── movie-videos.module.css# Movie Videos CSS
+│   ├── movie.module.css       # Movie CSS
+│   ├── navigation.module.css  # Navigation CSS
+│
+└── README.md                  # Project documentation
