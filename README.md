@@ -7,37 +7,51 @@ Next.js의 강력한 기능인 Dynamic Routing, Loading Page, Not Found Page 등
 
 ✨ Features
 Dynamic Routing: 영화 정보를 동적으로 로드하고 상세 페이지로 전환.
+
 Custom Components:
+
 Navigator: 페이지 전환을 위한 네비게이터 컴포넌트.
+
 Movie: 개별 영화 카드를 렌더링하는 컴포넌트.
+
 CSS Modules: 각 컴포넌트에 스타일을 모듈화하여 적용.
+
 Loading Page: 데이터 로딩 중 로딩 화면 제공.
+
 Not Found Page: 존재하지 않는 페이지로 접근 시 404 페이지 제공.
+
 TypeScript: 타입 안정성을 보장하며 개발.
+
 🛠️ Tech Stack
+
 Framework: Next.js
+
 Languages: TypeScript, JavaScript
+
 CSS: CSS Modules
+
 Deployment: Vercel
-Tooling:
+
 ESLint: 코드 품질 보장.
+
 Prettier: 코드 스타일 유지.
 
 🚀 Getting Started
-1. Clone the Repository
-bash
-코드 복사
+1. Clone the Repository bash 코드 복사
 git clone https://github.com/your-username/nextjs-movies.git
+
 cd nextjs-movies
-2. Install Dependencies
-bash
-코드 복사
+
+Install Dependencies 
+
+bash 코드 복사
+
 npm install
 # or
 yarn install
+
 3. Run Development Server
-bash
-코드 복사
+   
 npm run dev
 # or
 yarn dev
