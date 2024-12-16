@@ -1,4 +1,4 @@
-import './globals.css'
+import '../../styles/globals.css'
 import Navigation from '../components/navigation'
 import SalesLayout from './about-us/company/jobs/sales/layout'
 import Sales from './about-us/company/jobs/sales/page'

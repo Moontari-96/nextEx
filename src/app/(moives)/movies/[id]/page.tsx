@@ -1,7 +1,18 @@
 import { API_URL } from '@/app/(home)/page'
-import MovieInfo from '@/components/movie-info'
+import MovieInfo, { getMovie } from '@/components/movie-info'
 import MovieVideos from '@/components/movie-videos'
 import { Suspense } from 'react'
+
+interface IParams {
+    params: { id: string }
+}
+
+export async function generateMetadata({ params: { id } }: IParams) {
+    const movie = await getMovie(id)
+    return {
+        title: movie.title,
+    }
+}
 
 // async function getMovie(id: string) {
 //     await new Promise(resolve => setTimeout(resolve, 2000))
@@ -22,22 +33,16 @@ import { Suspense } from 'react'
 //     return response.json()
 // }
 
-export default async function MovieDetail({
-    params,
-}: {
-    params: { id: string }
-}) {
-    const { id } = await params // params를 비동기로 처리
+export default async function MovieDetail({ params: { id } }: IParams) {
+    //const { id } = await params // params를 비동기로 처리
     // const movie = await getMovie(id)
     // const videos = await getVideos(id)
     // const [movies, videos] = await Promise.all([getMovie(id), getVideos(id)])
     return (
         <div>
-            <h2 className="text-2xl">Movie Detail Page</h2>
             <Suspense fallback={<h1>Loading movie info</h1>}>
                 <MovieInfo id={id} />
             </Suspense>
-            <h2 className="text-xl">Videos</h2>
             <Suspense fallback={<h1>Loading movie videos</h1>}>
                 <MovieVideos id={id} />
             </Suspense>
@@ -59,3 +64,14 @@ export default async function MovieDetail({
 
 Promise.all()는 자바스크립트에서 여러 비동기 작업을 동시에 실행하고, 모든 작업이 완료될 때까지 기다렸다가 결과를 배열 형태로 반환하는 함수입니다.
 쉽게 말해, 여러 Promise를 모두 이행할 때까지 기다린 후, 그 결과를 한꺼번에 받아볼 수 있게 해줍니다. */
+
+/* generateMetadata
+메타데이터 객체(metadata) 및 generateMetadata 함수는 서버 컴포넌트에서만 지원됩니다.
+동일한 경로에서 메타데이터 객체와 generateMetadata 함수를 모두 export 할 수는 없습니다.
+(둘 중 하나만 사용 가능) */
+
+/* - 아래 3개의 API를 이용해서 credits, providers, similar 페이지 추가하기
+- /movies/:id/credits
+- /movies/:id/providers
+- /movies/:id/similar
+- 스타일링하기 */
