@@ -42,7 +42,7 @@ git clone https://github.com/your-username/nextjs-movies.git
 
 cd nextjs-movies
 
-Install Dependencies 
+2. Install Dependencies 
 
 bash 코드 복사
 
@@ -55,6 +55,7 @@ yarn install
 npm run dev
 # or
 yarn dev
+
 Open http://localhost:3000 to view it in your browser.
 
 📂 Project Structure
