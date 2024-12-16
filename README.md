@@ -71,3 +71,55 @@ Open http://localhost:3000 to view it in your browser.
 
 
 📂 Project Structure
+📂 Project Structure
+
+src/
+
+├── app/
+
+│   ├── (home)/    # Home page directory
+
+│   │   ├── page.tsx            # Home page component
+
+│   │
+
+│   ├── movies/
+
+│   │   ├── [id]/               # Dynamic movie detail routing
+
+│   │   │   ├── page.tsx        # Movie detail page
+
+│   │
+
+│   ├── not-found.tsx           # Custom 404 page
+
+│
+
+├── components/
+
+│   ├── movie.tsx               # Movie card component
+
+│   ├── navigator.tsx           # Navigation component
+
+│   ├── movie-info.tsx          # Movie info details component
+
+│   ├── movie-videos.tsx        # Movie videos details component
+
+│   ├── loading.tsx             # Loading page for suspense
+
+│
+
+├── styles/                     # Shared styles
+
+│   ├── globals.css             # Global CSS
+
+│   ├── home.module.css         # Home CSS
+
+│   ├── movie-info.module.css   # Movie info CSS
+
+│   ├── movie-videos.module.css # Movie Videos CSS
+
+│   ├── movie.module.css        # Movie CSS
+│   ├── navigation.module.css   # Navigation CSS
+│
+└── README.md                   # Project documentation
